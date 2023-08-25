@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #17252A;
+    background-color: #3AAFA9;
+    text-align: left;
+  }
+
+/*The .container class is using flexbox layout.
+display: flex ensures a flexible container is created for its child element
+justify-content: space-between ensures all child elements are evenly spaced out
+padding: 5% gives padding around the container and uses a percentage as opposed to pixels as it's fluid*/
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+  }
+/*The .column class represents the columns within the flex container.
+flex:1 ensures each column consumes an equal amount of space
+padding: 2% provides padding and ensures it's fluid as opposed to static (like 10px for example)*/
+  .column {
+    flex: 1;
+    padding: 2%;
+    text-align: center;
+  }
+/*images on the webpage are responsive as max-width: 100% ensures the image scales down if the container is more narrow than the image
+ height: auto ensures the image keeps its aspect ratio*/
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+/*A media query is implemented so that screens with a resolution of 600px or less view the .container class as a column layout.
+This means that the columns are vertically placed on top of one another for smaller screen sizes so it's much easier to read*/
+  @media (max-width: 600px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+  
